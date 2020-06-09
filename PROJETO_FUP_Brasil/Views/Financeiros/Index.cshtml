@@ -1,0 +1,67 @@
+﻿@model PROJETO_FUP_Brasil.Models.FinanceiroViewModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+@*<table class="table py-5 text-" style="background-color:beige; color:darkgreen; font-weight:900;  font-size:22px;">
+    <thead>
+        <tr>
+            <th>
+                Entrada
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody class="text-light">
+        @foreach (var item in Model.Alunos)
+        {
+            <tr>
+                <td style="background-color:beige; color:darkgreen; font-weight:900; font-size:22px;">
+                    @Html.DisplayFor(modelItem => item.Cursos.ValorCurso)
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>
+
+<table class="table py-5 text-" style="background-color:beige; color:red; font-weight:900;  font-size:22px;">
+    <thead>
+        <tr>
+            <th>
+                Saida
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Funcionarios)
+        {
+            double y = 0;
+            double x = Convert.ToDouble(item.SalarioFuncionario);
+            y = x + y;
+
+            <tr>
+                <td class="text" style="background-color:beige; color:red; font-weight:900;  font-size:22px;">
+                    @Html.DisplayFor(modelItem => item.SalarioFuncionario)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>*@
+    <div class="container">
+        <div class="row">
+            <div class="col"></div>
+            <div class="col-md-5 my-5 pt-5">
+                <div class="borda-relatorio text-center px-5">
+                    <h2 class="pt-5 roboto">RELÁTORIO</h2>
+                    <img class="img-fluid mt-3" src="~/img/relatorio.svg" />
+                    <a asp-area="" asp-controller="Financeiros" asp-action="Download"><button class="mb-3 btn-abrir roboto rounded-pill border-0 px-5 py-3 my-5 w-75 "asp-area="" asp-controller="Financeiros" asp-action="Download">ABRIR</button></a>
+                </div>
+            </div>
+            <div class="col"></div>
+        </div>
+    </div>
+
+

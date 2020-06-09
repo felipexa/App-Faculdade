@@ -1,0 +1,88 @@
+﻿@model PROJETO_FUP_Brasil.Models.AlunoViewModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<a asp-action="Create">
+    <button class="btn-criar roboto rounded-pill border-0">CADASTRAR</button>
+</a>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <form asp-controller="Alunos" asp-action="Index">
+                <div class="d-flex">
+                    <input type="text" asp-for="SearchString" class="form-control roboto w-25" placeholder="Buscar..." maxlength="11" />
+                    <button type="submit" class=" btn-voltar ml-lg-3 roboto rounded-pill border-0">FILTRAR</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<table class="table roboto text-uppercase font-tabela">
+    <thead>
+        <tr>
+            <th>
+                Nome
+            </th>
+            @*<th>
+                    @Html.DisplayNameFor(model => model.Rg)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Cpf)
+                </th>*@
+            <th>
+                Nascimento
+            </th>
+            <th>
+                Inicio/Curso
+            </th>
+            <th>
+                Termino/Curso
+            </th>
+            <th>
+                Genero
+            </th>
+            <th>
+                Curso
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Alunos)
+        {
+            <tr class="table roboto text-uppercase font-tabela">
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.Rg)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Cpf)
+                    </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.Datanascimento)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataInicioCurso)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataTerminoCurso)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Genero)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cursos.NomeCurso)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id_Matricula" class="button-geral">Editar</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id_Matricula" class="button-geral">Detalhes</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id_Matricula" class="button-geral">Deletar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

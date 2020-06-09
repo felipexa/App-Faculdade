@@ -1,0 +1,60 @@
+﻿@{
+        ViewData["Title"] = "Pagina Inicial";
+}
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 py-5 text-center " style="cursor:pointer; text-decoration:none;">
+                <div class="" style="border:13px solid #131313; background:white ">
+                    <a asp-controller="Funcionarios" asp-action="Index" style="        text-decoration: none;
+">
+                        <img class="imgs-inicio" src="~/img/funcionario.png" />
+                        <h1 class="py-3" style="color:black">Funcionários</h1>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-4 py-5 text-center">
+                <div class="" style="border:13px solid #131313; background:white ">
+                    <a asp-controller="Alunos" asp-action="Index" style="text-decoration:none; width:200px; height:200px;">
+                        <img class="imgs-inicio" src="~/img/estudante.png" style="cursor: pointer; text-decoration: none" />
+                        <h1 class="py-3" style="color:black">Alunos</h1>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-4  py-5 text-center">
+                <div class="" style="border:13px solid #131313; background:white ">
+                    <a asp-controller="Financeiros" asp-action="Index" style="text-decoration:none; width:200px; height:200px;">
+                        <img class="imgs-inicio" src="~/img/financeiro.svg" style="cursor:pointer; text-decoration:none" />
+                        <h1 class="py-3" style="color:black">Financeiro</h1>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+                <div class="row pb-5">
+                    <div class="col-md-2">
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <div class="" style="        border: 13px solid #131313;
+        background: white">
+                            <a asp-controller="Chefias" asp-action="Index" style="text-decoration:none;">
+                                <img class="imgs-inicio" src="~/img/chefes.svg" />
+                                <h1 class="py-3" style="color:black">Gestores</h1>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-4  text-center">
+                        <div class="" style="border:13px solid #131313; background:white ">
+                            <a asp-controller="Cursos" asp-action="Index" style="text-decoration:none; width:200px; height:200px;">
+                                <img class="imgs-inicio" src="~/img/cursos.png" style="cursor: pointer; text-decoration: none" />
+                                <h1 class="py-3" style="color:black">Cursos</h1>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-2"></div>
+                </div>
+            </div>
+           
+            
+        </div>
+    </div>
+

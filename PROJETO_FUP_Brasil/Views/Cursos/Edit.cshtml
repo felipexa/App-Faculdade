@@ -1,0 +1,47 @@
+﻿@model PROJETO_FUP_Brasil.Models.Cursos
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 text-center py-5">
+
+        </div>
+        <form asp-action="Edit">
+            <div class="row">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="Id_Curso" />
+                <div class="col-md-12 roboto">
+                    <div class="form-group">
+                        <h2 class="roboto mr-5">Curso</h2>
+                        <input asp-for="NomeCurso" class="form-control roboto" placeholder="NOME DO CURSO" />
+                        <span asp-validation-for="NomeCurso" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-md-6 roboto">
+                    <h2 class="roboto mr-5">Mensalidade</h2>
+                    <input asp-for="ValorCurso" class="form-control roboto" placeholder="MENSALIDADE" />
+                    <span asp-validation-for="ValorCurso" class="text-danger"></span>
+                </div>
+                <div class="col-md-6 roboto mb-3">
+                    <h2 class="roboto mr-5">Responsável do Curso</h2>
+                    <input asp-for="ProfessorCurso" class="form-control" placeholder="COORDENADOR DO CURSO" />
+                    <span asp-validation-for="ProfessorCurso" class="text-danger"></span>
+                </div>
+                <div class="form-group text-center col-md-12 w-100">
+                    <input type="submit" value="EDITAR CURSO" class="btn-add w-50 rounded-pill" />
+                    <a href="/Cursos">
+                        <input class="roboto btn-voltar w-50 text-center rounded-pill mb-5" value="VOLTAR PARA O INICIO">
+                    </a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

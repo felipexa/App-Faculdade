@@ -1,0 +1,119 @@
+﻿@model PROJETO_FUP_Brasil.Models.Funcionario
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+
+    <div>
+        <div class="py-5"></div>
+        <img class="position-absolute mt-5 pt-3 mx-5 ficha " src="~/img/ficha.png" />
+        <div class="container back-detalhes pt-5 pb-3 ">
+            <div class="row  p-6">
+                <div class="pb-5 text-center">
+
+                </div>
+                <div class="col-md-12 text-left">
+                    <h2 class="text-uppercase">NOME COMPLETO - <strong>@Html.DisplayFor(model => model.NomeFuncionario)</strong></h2>
+                </div>
+                <div class="col-md-12 py-3">
+                    <h2>RG - <strong>@Html.DisplayFor(model => model.Rg)</strong></h2>
+                </div>
+                <div class="col-md-12 ">
+                    <h2>CPF - <strong>@Html.DisplayFor(model => model.Cpf)</strong></h2>
+                </div>
+                <div class="col-md-12 py-3">
+                    <h2 class="text-uppercase">
+                        DATA DE NASCIMENTO - <strong>@Html.DisplayFor(model => model.Datanascimento)</strong>
+                    </h2>
+                </div>
+                <div class="col-md-12">
+                    <h2 class="text-uppercase">
+                        DATA DE CONTRATAÇÃO - <strong>@Html.DisplayFor(model => model.DataContratacao)</strong>
+                    </h2>
+                </div>
+                <div class="col-md-12 py-3">
+                    <h2 class="text-uppercase">
+                        DATA DE DEMISSÃO - <strong>@Html.DisplayFor(model => model.DataDemissao)</strong>
+                    </h2>
+                </div>
+                <div class="col-md-12">
+                    <h2 class="text-uppercase">
+                        GÊNERO - <strong>@Html.DisplayFor(model => model.Genero)</strong>
+                    </h2>
+                </div>
+                <div class="col-md-12 py-3">
+                    <h2 class="text-uppercase">
+                        SALÁRIO -  <strong>@Html.DisplayFor(model => model.SalarioFuncionario)</strong>
+                    </h2>
+                </div>
+            </div>
+        </div>
+        <div class="pb-3 text-center">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <input type="hidden" asp-for="FuncionarioId" />
+                            <input type="submit" id="ifood" value="Excluir" class="roboto rounded-pill border-0 px-5 py-3 mt-5 mb-3 w-50 btn-deletar text-uppercase" />
+                        </div>
+                        <div class="col-md-12">
+                            <a asp-action="Index"><button class="mb-3 btn-abrir roboto rounded-pill border-0 mb-5 px-5 py-3  w-50 ">VOLTAR</button></a>
+                        </div>
+                    </div>
+                </div>
+
+            <div class="popup-container">
+                <div class="popup rounded">
+                    <div class="popup-close">x</div>
+                    <div class="popup-content">
+                        
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <h2 class="my-3 roboto">Tem certeza de que deseja excluir estes dados?</h2>
+                                        <form asp-action="Delete">
+                                            <input type="hidden" asp-for="FuncionarioId" />
+                                            <input type="submit" value="EXCLUIR" class="roboto rounded-pill border-0 px-5 py-3 mt-5 mb-3 w-50 btn-deletar text-uppercase" />
+                                        </form>
+                                    </div>
+                       
+                        <div class="col-md-12">
+                            <a asp-action="Index"><button class="mb-3 btn-abrir roboto rounded-pill border-0 mb-3 px-5 py-3  w-50 ">CANCELAR</button></a>
+                        </div>
+                    </div>
+                            </div>
+                       
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+        const button = document.getElementById('ifood');
+        const popup = document.querySelector('.popup-container');
+        const close = document.querySelector('.popup-close')
+        button.addEventListener('click', () => {
+            popup.style.display = 'flex';
+        })
+        close.addEventListener('click', () => {
+            popup.style.display = 'none';
+        })
+        popup.addEventListener('click', () => {
+            popup.style.display = 'none';
+        });
+        const button2 = document.getElementById('last');
+        const popup2 = document.querySelector('.popup-container');
+        const close2 = document.querySelector('.popup-close')
+        button2.addEventListener('click', () => {
+            popup2.style.display = 'flex';
+        })
+        close2.addEventListener('click', () => {
+            popup2.style.display = 'none';
+        })
+        popup2.addEventListener('click', () => {
+            popup2.style.display = 'none';
+        })
+    </script>

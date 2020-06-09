@@ -1,0 +1,58 @@
+﻿@model PROJETO_FUP_Brasil.Models.Cursos
+
+@{
+    ViewData["Title"] = "Details";
+
+}
+<div class="py-5"></div>
+<img class="position-absolute mt-5 pt-3 mx-5 ficha " src="~/img/ficha.png" />
+<div class="container back-detalhes pt-5 pb-3 ">
+    <div class="row  p-6">
+        <div class="pb-5 text-center">
+
+        </div>
+        <div class="col-md-12 text-left">
+            <h2 class="text-uppercase">CURSO - <strong>@Html.DisplayFor(model => model.NomeCurso)</strong></h2>
+        </div>
+        <div class="col-md-12 py-3">
+            <h2 class="text-uppercase">
+                VALOR - <strong>@Html.DisplayFor(model => model.ValorCurso)</strong>
+            </h2>
+        </div>
+        <div class="col-md-12 ">
+            <h2 class="text-uppercase">
+                COORDENADOR CURSO -  <strong>@Html.DisplayFor(model => model.ProfessorCurso)</strong>
+            </h2>
+        </div>
+        <div class="col-md-12 py-3">
+            <h2 class="text-uppercase">
+                ALUNO CURSANDO  <strong>
+    @if (Model.Aluno != null)
+    {
+        foreach (var item in Model.Aluno)
+        {
+            if (item.DataTerminoCurso == null || item.DataTerminoCurso.ToString() == "")
+            {
+                <dd class="col-sm-10 mt-3" style="margin-left: -18px;">
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </dd>
+              
+            }
+        }
+    }
+    else
+    {
+        <dd class="mt-3"style="font-size: 28px!important;">Nenhum aluno cadastrado no curso</dd>
+    }
+</strong>
+            </h2>
+        </div>
+    </div>
+</div>
+<div class="pb-3 text-center">
+    <a asp-action="Index"><button class="mb-3 btn-abrir roboto rounded-pill border-0 px-5 py-3 my-5 w-75 ">VOLTAR</button></a>
+   
+</div>
+
+
+ 

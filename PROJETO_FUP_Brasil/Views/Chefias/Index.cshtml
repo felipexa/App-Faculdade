@@ -1,0 +1,47 @@
+﻿@model IEnumerable<PROJETO_FUP_Brasil.Models.Chefia>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<a asp-action="Create">
+    <button class="btn-criar roboto rounded-pill border-0">CADASTRAR</button>
+</a>
+<table class="table roboto text-uppercase font-tabela">
+    <thead>
+        <tr>
+            <th>
+               Gestor
+            </th>
+            <th>
+               Setor
+            </th>
+            @*<th>
+                ID
+            </th>*@
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr class="table roboto text-uppercase font-tabela">
+                <td>
+                    @Html.DisplayFor(modelItem => item.NomeChefia)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Setor)
+                </td>
+                @*<td>
+                    @Html.DisplayFor(modelItem => item.FuncionarioId)
+                </td>*@
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.ChefiaId" class="button-geral">Editar</a> |
+                    <a asp-action="Details" asp-route-id="@item.ChefiaId" class="button-geral">Detalhes</a> |
+                    <a asp-action="Delete" asp-route-id="@item.ChefiaId" class="button-geral">Deletar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

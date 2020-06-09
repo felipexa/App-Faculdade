@@ -1,0 +1,73 @@
+﻿@model Remake_FUP.Models.Aluno
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center py-5">
+
+            </div>
+            <form asp-action="Edit">
+                <div class="row">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="Id_Matricula" />
+                    <div class="col-md-12 roboto">
+                        <div class="form-group">
+                            <h2 class="roboto mr-5">Nome Completo</h2>
+                            <input asp-for="Nome" class="form-control roboto" placeholder="NOME COMPLETO" />
+                            <span asp-validation-for="Nome" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-6 roboto">
+                        <h2 class="roboto mr-5">RG</h2>
+                        <input asp-for="Rg" class="form-control roboto" placeholder="RG" />
+                        <span asp-validation-for="Rg" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-6 roboto mb-3">
+                        <h2 class="roboto mr-5">CPF</h2>
+                        <input asp-for="Cpf" class="form-control" placeholder="CPF" />
+                        <span asp-validation-for="Cpf" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-6 roboto">
+                        <h2 class="roboto mr-5">Data de Nascimento</h2>
+                        <input asp-for="Datanascimento" onfocus="(this.type='date')" onblur="(this.type='text')" class="form-control" placeholder="DATA DE NASCIMENTO" />
+                        <span asp-validation-for="Datanascimento" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-6 roboto mb-3">
+                        <h2 class="roboto mr-5">Inicio do Curso</h2>
+                        <input asp-for="DataInicioCurso" class="form-control" onfocus="(this.type='date')" onblur="(this.type='text')" placeholder="DATA DE INICIO CURSO" />
+                        <span asp-validation-for="DataInicioCurso" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-6 roboto mb-3">
+                        <h2 class="roboto mr-5">Término do Curso</h2>
+                        <input asp-for="DataTerminoCurso" class="form-control" onfocus="(this.type='date')" onblur="(this.type='text')" placeholder="DATA DE INICIO CURSO" />
+                        <span asp-validation-for="DataTerminoCurso" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-6 roboto">
+                        <h2 class="roboto mr-5">Gênero</h2>
+                        <input asp-for="Genero" class="form-control" placeholder="GENÊRO" />
+                        <span asp-validation-for="Genero" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-6 roboto">
+                        <h2 class="roboto mr-5">Curso</h2>
+                        <select asp-for="CursosID" class="form-control" asp-items="ViewBag.CursosID"></select>
+                    </div>
+                    <div class="form-group text-center col-md-12 w-100">
+                        <input type="submit" value="EDITAR ALUNO" class="btn-add w-50 rounded-pill" />
+                        <a href="/Alunos">
+                            <input class="roboto btn-voltar w-50 text-center rounded-pill mb-5" value="VOLTAR PARA O INICIO">
+                        </a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,57 @@
+﻿@model IEnumerable<PROJETO_FUP_Brasil.Models.Cursos>
+
+@{
+    ViewData["Title"] = "Index";
+}   
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 d-flex align-items-md-center">
+            <div class="btn-1">
+                <a asp-action="Create">
+                    <button class="btn-criar roboto rounded-pill border-0">CADASTRAR</button>
+                </a>
+            </div>
+            <div class="btn-2 ml-3">
+                <a asp-area="" asp-controller="Cursos" asp-action="DownloadAluno"><button class="btn-criar roboto rounded-pill border-0 " asp-area="" asp-controller="Financeiros" asp-action="Download">GERAR RELÁTORIO</button></a>
+            </div>
+        </div>
+    </div>
+</div>   
+    
+<table  class="table roboto text-uppercase font-tabela">
+    <thead>
+        <tr>
+            <th>
+            CURSO
+            </th>
+            <th>
+              MENSALIDADE
+            </th>
+            <th>
+               CORDENADOR DO CURSO
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr class="table roboto text-uppercase font-tabela">
+            <td>
+                @Html.DisplayFor(modelItem => item.NomeCurso)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ValorCurso)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProfessorCurso)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id_Curso" class="button-geral">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.Id_Curso" class="button-geral">Detalhes</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id_Curso" class="button-geral">Deletar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

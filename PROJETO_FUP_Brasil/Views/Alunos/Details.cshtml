@@ -1,0 +1,53 @@
+﻿@model Remake_FUP.Models.Aluno
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+
+<div class="py-5"></div>
+<img class="position-absolute mt-5 pt-3 mx-5 ficha " src="~/img/ficha.png" />
+<div class="container back-detalhes pt-5 pb-3 ">
+    <div class="row  p-6">
+        <div class="pb-5 text-center">
+
+        </div>
+        <div class="col-md-12 text-left">
+            <h2 class="text-uppercase">NOME COMPLETO - <strong>@Html.DisplayFor(model => model.Nome)</strong></h2>
+        </div>
+        <div class="col-md-12 py-3">
+            <h2>RG - <strong>@Html.DisplayFor(model => model.Rg)</strong></h2>
+        </div>
+        <div class="col-md-12 ">
+            <h2>CPF - <strong>@Html.DisplayFor(model => model.Cpf)</strong></h2>
+        </div>
+        <div class="col-md-12 py-3">
+            <h2 class="text-uppercase">
+                DATA DE NASCIMENTO - <strong>@Html.DisplayFor(model => model.Datanascimento)</strong>
+            </h2>
+        </div>
+        <div class="col-md-12">
+            <h2 class="text-uppercase">
+                DATA INICIO CURSO - <strong>@Html.DisplayFor(model => model.DataInicioCurso)</strong>
+            </h2>
+        </div>
+        <div class="col-md-12 py-3">
+            <h2 class="text-uppercase">
+                DATA TERMINO CURSO - <strong>@Html.DisplayFor(model => model.DataTerminoCurso)</strong>
+            </h2>
+        </div>
+        <div class="col-md-12">
+            <h2 class="text-uppercase">
+                GÊNERO - <strong>@Html.DisplayFor(model => model.Genero)</strong>
+            </h2>
+        </div>
+        <div class="col-md-12 py-3">
+            <h2 class="text-uppercase">
+                CURSO -  <strong>@Html.DisplayFor(model => model.Cursos.NomeCurso)</strong>
+            </h2>
+        </div>
+    </div>
+</div>
+<div class="pb-3 text-center">
+    <a asp-action="Index"><button class="mb-3 btn-abrir roboto rounded-pill border-0 px-5 py-3 my-5 w-75 ">VOLTAR</button></a>
+</div>

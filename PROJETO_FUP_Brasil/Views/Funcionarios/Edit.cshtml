@@ -1,0 +1,139 @@
+﻿@model PROJETO_FUP_Brasil.Models.Funcionario
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+
+    @*<div class="row">
+        <div class="col-md-12 text-center">
+            <h2>Editar</h2>
+        </div>
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="col-md-12">
+                <input asp-for="NomeFuncionario" class="form-control roboto" placeholder="Nome Funcionario" />
+                <span asp-validation-for="NomeFuncionario" class="text-danger"></span>
+                <input type="hidden" asp-for="FuncionarioId" />
+            </div>
+            <div class="col-md-4">
+                <form asp-action="Edit">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="FuncionarioId" />
+                    <div class="form-group">
+                        <label asp-for="NomeFuncionario" class="control-label"></label>
+                        <input asp-for="NomeFuncionario" class="form-control" />
+                        <span asp-validation-for="NomeFuncionario" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Rg" class="control-label"></label>
+                        <input asp-for="Rg" class="form-control" />
+                        <span asp-validation-for="Rg" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Cpf" class="control-label"></label>
+                        <input asp-for="Cpf" class="form-control" />
+                        <span asp-validation-for="Cpf" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Datanascimento" class="control-label"></label>
+                        <input asp-for="Datanascimento" class="form-control" />
+                        <span asp-validation-for="Datanascimento" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="DataContratacao" class="control-label"></label>
+                        <input asp-for="DataContratacao" class="form-control" />
+                        <span asp-validation-for="DataContratacao" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="DataDemissao" class="control-label"></label>
+                        <input asp-for="DataDemissao" class="form-control" />
+                        <span asp-validation-for="DataDemissao" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Genero" class="control-label"></label>
+                        <input asp-for="Genero" class="form-control" />
+                        <span asp-validation-for="Genero" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="SalarioFuncionario" class="control-label"></label>
+                        <input asp-for="SalarioFuncionario" class="form-control" />
+                        <span asp-validation-for="SalarioFuncionario" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Save" class="btn btn-primary" />
+                    </div>
+                </form>
+            </div>
+</div>*@
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center py-5">
+                
+            </div>
+            <form asp-action="Edit">
+                <div class="row">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="FuncionarioId" />
+                    <div class="col-md-12 roboto">
+                        <div class="form-group">
+                            <h2 class="roboto mr-5">Nome Completo</h2>
+                            <input asp-for="NomeFuncionario" class="form-control roboto" placeholder="NOME COMPLETO" />
+                            <span asp-validation-for="NomeFuncionario" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-6 roboto">
+                        <h2 class="roboto mr-5">RG</h2>
+                        <input asp-for="Rg" class="form-control roboto" placeholder="RG" />
+                        <span asp-validation-for="Rg" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-6 roboto mb-3">
+                        <h2 class="roboto mr-5">CPF</h2>
+                        <input asp-for="Cpf" class="form-control" placeholder="CPF" />
+                        <span asp-validation-for="Cpf" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-6 roboto">
+                        <h2 class="roboto mr-5">Data de Nascimento</h2>
+                        <input asp-for="Datanascimento" onfocus="(this.type='date')" onblur="(this.type='text')" class="form-control" placeholder="DATA DE NASCIMENTO" />
+                        <span asp-validation-for="Datanascimento" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-6 roboto mb-3">
+                        <h2 class="roboto mr-5">Data de Contratação</h2>
+                        <input asp-for="DataContratacao" class="form-control" onfocus="(this.type='date')" onblur="(this.type='text')" placeholder="DATA DE CONTRATAÇÃO" />
+                        <span asp-validation-for="DataContratacao" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-6 roboto mb-3">
+                        <h2 class="roboto mr-5">Data de Demissão</h2>
+                        <input asp-for="DataDemissao" class="form-control" onfocus="(this.type='date')" onblur="(this.type='text')" placeholder="DATA DE CONTRATAÇÃO" />
+                        <span asp-validation-for="DataDemissao" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-6 roboto">
+                        <h2 class="roboto mr-5">Gênero</h2>
+                        <input asp-for="Genero" class="form-control" placeholder="GENÊRO" />
+                        <span asp-validation-for="Genero" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-6 roboto">
+                        <h2 class="roboto mr-5">Salário</h2>
+                        <input asp-for="SalarioFuncionario" class="form-control" placeholder="SALÁRIO" />
+                        <span asp-validation-for="SalarioFuncionario" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-6 roboto">
+                        <h2 class="roboto mr-5">Chefe</h2>
+                        <select asp-for="ChefiaId" class="form-control" asp-items="ViewBag.ChefiaId"></select>
+                    </div>
+                    <div class="form-group text-center col-md-12 w-100">
+                        <input type="submit" value="EDITAR FUNCIONÁRIO" class="btn-add w-50 rounded-pill" />
+                        <a href="/Funcionarios">
+                            <input class="roboto btn-voltar w-50 text-center rounded-pill mb-5" value="VOLTAR PARA O INICIO">
+                        </a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

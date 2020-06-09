@@ -1,0 +1,33 @@
+﻿@model PROJETO_FUP_Brasil.Models.Chefia
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="py-5"></div>
+<img class="position-absolute mt-5 pt-3 mx-5 ficha " src="~/img/ficha.png" />
+<div class="container back-detalhes pt-5 pb-3 ">
+    <div class="row  p-6">
+        <div class="pb-5 text-center">
+
+        </div>
+        <div class="col-md-12 text-left">
+            <h2 class="text-uppercase">GESTOR - <strong>@Html.DisplayFor(model => model.NomeChefia)</strong></h2>
+        </div>
+        <div class="col-md-12 py-3">
+            <h2 class="text-uppercase">
+                SETOR - <strong>@Html.DisplayFor(model => model.Setor)</strong>
+            </h2>
+        </div>
+        @*<div class="col-md-12 ">
+            <h2 class="text-uppercase">
+                ID -  <strong>@Html.DisplayFor(model => model.FuncionarioId)</strong>
+            </h2>
+        </div>*@
+    </div>
+</div>
+<div class="pb-3 text-center">
+    <a asp-action="Index"><button class="mb-3 btn-abrir roboto rounded-pill border-0 px-5 py-3 my-5 w-75 ">VOLTAR</button></a>
+
+</div>
+
